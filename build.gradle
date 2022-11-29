@@ -1,0 +1,35 @@
+// marks this as Java project, mostly to help with setting the Java version settings
+apply plugin: 'java'
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
+
+// set variables for use in every other submodule
+ext {
+    springFrameworkVersion = "5.1.5.RELEASE"
+    jacksonVersion = "2.9.9"
+    testNgVersion = "6.14.3"
+}
+
+group 'com.bsg5'
+version '1.0'
+
+// set of build directives that apply to every project under this project
+// every project has java plugin applied
+allprojects {
+
+    apply plugin: 'java'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation "org.testng:testng:$testNgVersion"
+    }
+
+    test {
+        useTestNG()
+    }
+
+}

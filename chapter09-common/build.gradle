@@ -1,0 +1,25 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id 'org.springframework.boot' version '2.1.4.RELEASE' apply false
+}
+
+// include the Spring Boot plugin, but then add apply false
+// this means that the io.spring.dependency-management is available to the project
+// we can apply it without the rest of Spring Boot being kicked into motion
+
+apply plugin: 'io.spring.dependency-management'
+
+// the dependency management requires information about the versions to import
+// thus, we also add a dependencyManagement block and forcibly include the versions from the Spring Boot plugin
+dependencyManagement {
+    imports {
+        mavenBom SpringBootPlugin.BOM_COORDINATES
+    }
+}
+
+dependencies {
+    compile "org.springframework.data:spring-data-commons"
+    compile "org.springframework:spring-tx"
+    compile "org.springframework:spring-beans"
+}

@@ -1,0 +1,17 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.3.RELEASE'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    compile 'com.h2database:h2'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+bootJar {
+    baseName = 'bsg5-chapter07'
+    version = '1.0.0'
+}

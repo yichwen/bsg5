@@ -1,0 +1,17 @@
+rootProject.name = 'bsg5'
+
+// tell Gradle that a subdirectory represents a subproject
+include 'chapter02'
+include 'chapter03'
+include 'chapter04'
+include 'chapter05-common'
+include 'chapter05-anno'
+include 'chapter05-xml'
+include 'chapter06'
+include 'chapter07'
+include 'chapter08'
+include 'chapter09-common'
+include 'chapter09-test'
+include 'chapter09-jpa'
+include 'chapter09-mongodb'
+
